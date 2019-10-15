@@ -7,10 +7,11 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    message:''
   },
   //事件处理函数
-  bindViewTap: function() {
+  viewLog: function() {
     wx.navigateTo({
       url: '../logs/logs'
     })
@@ -49,6 +50,11 @@ Page({
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })
+  },
+  submitForm: function() {
+    this.setData({
+      message: '提交表单成功！'
     })
   }
 })

@@ -1,4 +1,5 @@
 {
   "navigationBarTitleText": "查看启动日志",
+  "navigationBarBackgroundColor": "#0066FF",
   "usingComponents": {}
 }
