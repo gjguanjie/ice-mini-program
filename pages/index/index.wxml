@@ -8,7 +8,7 @@
     </block>
   </view>
   <view class="btn-group">
-    <button type="primary" form-type="submit" size="default" plain="true" bindtap="submitForm">提交表单</button>
+    <button type="primary" form-type="submit" size="default" plain="true" bindtap="submitForm">赵小妞</button>
      <button type="primary" size="default"  bindtap="goToWelcome">欢迎</button>
   </view>
   <my-component>

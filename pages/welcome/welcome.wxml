@@ -4,7 +4,7 @@
     <image src="../../images/cat.jpeg" class="avatar"></image>
   </view>
   <text class="motto">欢迎页面</text>
-  <view class="jurney-container">
+  <view class="jurney-container" catchtap="goToPost">
     <text>小程序</text>
   </view>
 </view>

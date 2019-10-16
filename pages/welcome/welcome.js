@@ -62,5 +62,19 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  goToPost: function() {
+    wx.redirectTo({
+      url: '../post/post',
+      success: function() {
+        console.log("jump to post success")
+      },
+      fail: function() {
+        console.log("jump to post fail")
+      },
+      complete: function() {
+        console.log("jump to post complete")
+      }
+    })
   }
 })

@@ -56,6 +56,9 @@ Page({
     this.setData({
       message: '提交表单成功！'
     })
+    wx.navigateTo({
+      url: '../post/post',
+    })
   },
   goToWelcome: function() {
     wx.navigateTo({
