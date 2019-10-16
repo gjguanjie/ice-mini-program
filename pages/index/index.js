@@ -56,5 +56,10 @@ Page({
     this.setData({
       message: '提交表单成功！'
     })
+  },
+  goToWelcome: function() {
+    wx.navigateTo({
+      url: '../welcome/welcome',
+    })
   }
 })

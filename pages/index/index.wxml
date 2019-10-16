@@ -9,15 +9,16 @@
   </view>
   <view class="btn-group">
     <button type="primary" form-type="submit" size="default" plain="true" bindtap="submitForm">提交表单</button>
+     <button type="primary" size="default"  bindtap="goToWelcome">欢迎</button>
   </view>
   <my-component>
     <!-- 这部分内容将被放置在组件 <slot> 的位置上 -->
-     <view>这里是插入到组件slot中的内容</view> 
+    <view>这里是插入到组件slot中的内容</view>
   </my-component>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
   <view>
-     <text>{{message}}</text>
+    <text>{{message}}</text>
   </view>
 </view>

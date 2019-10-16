@@ -1,0 +1,10 @@
+<!--pages/welcome/welcome.wxml-->
+<view class="container">
+  <view  class="cat-image">
+    <image src="../../images/cat.jpeg" class="avatar"></image>
+  </view>
+  <text class="motto">欢迎页面</text>
+  <view class="jurney-container">
+    <text>小程序</text>
+  </view>
+</view>
