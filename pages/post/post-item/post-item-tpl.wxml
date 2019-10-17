@@ -1,0 +1,15 @@
+<template name="postItemTpl">
+  <view class="post-container">
+    <view class="post-author-date">
+      <image src="{{avatar}}" />
+      <text>{{date}}</text>
+    </view>
+    <text class="post-title">{{title}}</text>
+    <image class="post-image" src="{{postImg}}" />
+    <text class="post-content">{{postContent}}</text>
+    <view class="post-like">
+      <image src="../../images/post/zly5.jpg" />
+      <text>{{readCount}}</text>
+    </view>
+  </view>
+</template>

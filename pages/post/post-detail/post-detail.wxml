@@ -1,0 +1,13 @@
+<!--pages/post/post-detail/post-detail.wxml-->
+<view class="container">
+  <image src="{detail.image}}"></image>
+  <text class="title">{{detail.title}}</text>
+  <view class="author-date">
+    <view class="author-box">
+      <image class="avatar" src="{{detail.avatar}}"></image>
+      <text class="author">{{detail.author}}</text>
+    </view>
+     <text class="date">{{detail.date}}</text>
+  </view>
+  <text class="detail">{{detail.detail}}</text>
+</view>

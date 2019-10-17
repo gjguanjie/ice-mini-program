@@ -5,7 +5,13 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+    var cachePostDatas = wx.getStorageSync("postContents")
+    if (!cachePostDatas) {
+      // 当缓存中没有数据时，引入数据源，并记入缓存
+      var tmpPostDatas = require("/data/postData.js")
+      wx.setStorageSync("postContents", tmpPostDatas.postContents)
+    }
+    
     // 登录
     wx.login({
       success: res => {

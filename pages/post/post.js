@@ -1,16 +1,12 @@
 // pages/post/post.js
+var tmpImgs = require("../../data/postData.js")
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    "avatar": "../../images/post/zly2.jpg",
-    "date": "2019-10-10",
-    "title": "赵傻小妞",
-    "postImg": "../../images/post/zly3.jpg",
-    "postContent": "赵丽颖，1987年10月16日出生于河北省廊坊市，中国内地影视女演员、歌手。2006年，因获得雅虎搜星比赛冯小刚组冠军而进入演艺圈；同年，在冯小刚执导的广告片《跪族篇》中担任女主角。2011年，因在古装剧《新还珠格格》中饰演晴儿一角而被观众认识",
-    "readCount": 109
+  
   },
 
   /**
@@ -20,14 +16,10 @@ Page({
     this.setData({
       "title": "赵大漂亮"
     })
+    var tmpPostDatas = wx.getStorageSync("postContents")
     this.setData({
-      "dynamicImgs": [
-        "../../images/post/zly1.jpg",
-        "../../images/post/zly2.jpg",
-        "../../images/post/zly3.jpg",
-        "../../images/post/zly4.png",
-        "../../images/post/zly5.jpg"
-      ]
+      "dynamicImgs": tmpImgs.dynamicImgs,
+      "postContents": tmpPostDatas
     })
   },
 
@@ -78,5 +70,11 @@ Page({
    */
   onShareAppMessage: function() {
     console.log("onShareAppMessage :被调用")
+  },
+  postDetail: function(event) {
+    var postId = event.currentTarget.dataset.postId
+    wx.navigateTo({
+      url: "../post/post-detail/post-detail?id=" + postId,
+    })
   }
 })
