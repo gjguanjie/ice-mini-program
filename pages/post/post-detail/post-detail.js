@@ -69,5 +69,21 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  collectCollect: function(event) {
+    var data = event.currentTarget.dataset.detail
+    if (data.collectionStatus) {
+      data.collectionStatus = false
+      data.upNum = data.upNum + 1 
+      this.setData({
+        "detail": data
+      })
+    } else {
+      data.collectionStatus = true
+      data.upNum = data.upNum - 1
+      this.setData({
+        "detail": data
+      })
+    }
   }
 })
