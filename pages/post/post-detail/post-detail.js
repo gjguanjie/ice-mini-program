@@ -1,5 +1,5 @@
 // pages/post/post-detail/post-detail.js
-// var tmpPostDetails = require("/../../data/detailData.js")
+ var tmpPostDetails = require("../../../data/detailData.js")
 Page({
 
   /**
@@ -13,10 +13,10 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    // var postId = options.id
-    // this.setData({
-    //   "detail": tmpPostDetails.postDetails[postId-1]
-    // })
+    var postId = options.id
+    this.setData({
+      "detail": tmpPostDetails.postDetails[postId-1]
+    })
     
   },
 
@@ -24,7 +24,9 @@ Page({
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
-
+    wx.setNavigationBarTitle({
+      title: '新闻详情',
+    })
   },
 
   /**

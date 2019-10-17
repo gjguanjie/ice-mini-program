@@ -21,10 +21,11 @@
   display: flex;
   flex-direction: row;
   margin-top: 15rpx;
-  margin-left: 30rpx;
+  margin-left: 50rpx;
   align-items: center;
   justify-content: space-between;
-  font-size: 13px
+  font-size: 13px;
+  width: 100%
 }
 
 .author-box {
@@ -35,7 +36,8 @@
 
 .avatar {
   height: 50rpx;
-  width: 50rpx
+  width: 50rpx;
+  border-radius: 50%
 }
 
 .author {
@@ -46,7 +48,8 @@
 
 .date {
   color: #919191;
-  margin-right: 38rpx
+  float: right;
+  margin-right: 50rpx
 }
 
 .detail {

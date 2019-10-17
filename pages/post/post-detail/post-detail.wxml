@@ -1,6 +1,6 @@
 <!--pages/post/post-detail/post-detail.wxml-->
 <view class="container">
-  <image src="{detail.image}}"></image>
+  <image class="head-image" src="{{detail.image}}"></image>
   <text class="title">{{detail.title}}</text>
   <view class="author-date">
     <view class="author-box">
