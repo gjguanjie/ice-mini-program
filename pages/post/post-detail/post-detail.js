@@ -72,18 +72,30 @@ Page({
   },
   collectCollect: function(event) {
     var data = event.currentTarget.dataset.detail
-    if (data.collectionStatus) {
-      data.collectionStatus = false
-      data.upNum = data.upNum + 1 
+    if (!data.collectionStatus) {
+      data.collectionStatus = true
       this.setData({
-        "detail": data
+        "detail.collectionStatus": true,
+        "detail.upNum": data.upNum - 1 
       })
     } else {
-      data.collectionStatus = true
-      data.upNum = data.upNum - 1
+      data.collectionStatus = false
       this.setData({
-        "detail": data
+        "detail.collectionStatus": false,
+        "detail.upNum": data.upNum + 1 
       })
     }
+    wx.showToast({
+      title: !data.collectionStatus ? "收藏成功" : "取消成功",
+      duration: 1000,
+      icon: "success",
+      mask: true
+    })
+  },
+  detailComment: function(event) {
+    var tmpData = event.currentTarget.dataset.postId
+    wx.navigateTo({
+      url: '../post-comment/post-comment?id=tmpData',
+    })
   }
 })

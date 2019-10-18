@@ -13,16 +13,16 @@
 </view>
 <view class="tool">
   <view class="tool-item" data-post-id="{{detail.postId}}">
-    <image src="../../../images/like.png"></image>
+    <image src="/images/like.png"></image>
     <text>{{detail.upNum}}</text>
   </view>
   <view class="tool-item comment" data-detail="{{detail}}" catchtap="collectCollect">
-    <image wx:if="{{detail.collectionStatus}}" src="../../../images/unheat.png"></image>
-    <image wx:else src="../../../images/heat.png"></image>
+    <image wx:if="{{detail.collectionStatus}}" src="/images/unheat.png"></image>
+    <image wx:else src="/images/heat.png"></image>
     <text>{{detail.upNum}}</text>
   </view>
-  <view class="tool-item" data-post-id="{{detail.postId}}">
-    <image src="../../../images/comment.png"></image>
+  <view class="tool-item" data-post-id="{{detail.postId}}" catchtap="detailComment">
+    <image src="/images/comment.png"></image>
     <text>{{detail.upNum}}</text>
   </view>
 </view>
