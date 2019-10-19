@@ -14,7 +14,8 @@
   left: 0;
   bottom: 100rpx;
   right: 0;
-  overflow-y: auto
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch
 }
 
 .comment-item {
@@ -196,6 +197,9 @@
     font-family:Microsoft Yahei;
 }
 
+.send-more-btns-main {
+  margin-left: 50rpx
+}
 
 .send-more-box .more-btn-item{
     display: inline-block;
@@ -203,6 +207,10 @@
     height: 145rpx;
     margin-right: 35rpx;
     text-align: center;
+}
+
+.send-more-box .more-btn-item text {
+  margin-left:10rpx;
 }
 
 .more-btn-main{

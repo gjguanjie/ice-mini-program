@@ -56,8 +56,12 @@ Page({
     this.setData({
       message: '提交表单成功！'
     })
-    wx.navigateTo({
-      url: '../post/post',
+    // wx.navigateTo({
+    //   url: '/pages/post/post',
+    // })
+    // 当跳转入导航页时，使用swithTab 否则跳转到
+    wx.switchTab({
+      url: '/pages/post/post',
     })
   },
   goToWelcome: function() {

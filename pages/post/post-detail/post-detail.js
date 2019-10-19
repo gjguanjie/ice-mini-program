@@ -6,7 +6,8 @@ Page({
    * Page initial data
    */
   data: {
-   
+   "isPlayingMusic": '',
+    "backgroundMusic":'http://sc1.111ttt.cn/2018/1/03/13/396131229550.mp3'
   },
 
   /**
@@ -17,7 +18,7 @@ Page({
     this.setData({
       "detail": tmpPostDetails.postDetails[postId-1]
     })
-    
+    this.onMusicTap()
   },
 
   /**
@@ -27,27 +28,32 @@ Page({
     wx.setNavigationBarTitle({
       title: '新闻详情',
     })
+    this.setData({
+      "isPlayingMusic": true
+    })
   },
 
   /**
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-
+    
   },
 
   /**
    * Lifecycle function--Called when page hide
    */
   onHide: function () {
-
+    this.onMusicTap()
   },
 
   /**
    * Lifecycle function--Called when page unload
    */
   onUnload: function () {
-
+    if(this.data.isPlayingMusic) {
+      wx.pauseBackgroundAudio()
+    }
   },
 
   /**
@@ -97,5 +103,28 @@ Page({
     wx.navigateTo({
       url: '../post-comment/post-comment?id=tmpData',
     })
+  },
+  onMusicTap: function() {
+    if(this.data.isPlayingMusic) {
+      wx.pauseBackgroundAudio()
+      this.setData({
+        "isPlayingMusic": !this.data.isPlayingMusic
+      })
+    } else {
+      wx.playBackgroundAudio({
+        dataUrl: this.data.backgroundMusic,
+        title: '最美的期待'
+      })
+      this.setData({
+        "isPlayingMusic": !this.data.isPlayingMusic
+      })
+    }
+  },
+  onShareAppMessage: function() {
+    return {
+      title:"11",
+      desc:"111",
+      path:"pages/post/post-detail/post-detail"
+    }
   }
 })

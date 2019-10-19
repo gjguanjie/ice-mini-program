@@ -14,5 +14,26 @@
     "navigationBarTextStyle": "black",
     "enablePullDownRefresh": true
   },
+  "tabBar": {
+    "borderStyle": "white",
+    "selectedColor": "#4A6141",
+    "color": "#333",
+    "backgroundColor": "#E0E0E0",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "title": "漂亮",
+        "iconPath": "images/icon/wx_app_news.png",
+        "selectedIconPath": "images/icon/wx_app_news@HL.png"
+      },
+      {
+        "pagePath": "pages/post/post",
+        "title": "漂亮",
+        "iconPath": "images/icon/wx_app_news.png",
+        "selectedIconPath": "images/icon/wx_app_news@HL.png"
+      }
+    ]
+  },
   "sitemapLocation": "sitemap.json"
 }
