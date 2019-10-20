@@ -14,6 +14,23 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+function convertToStarsArray(stars) {
+  var num = stars/10;
+  var array = []
+  for(var i = 1; i < 5; i ++) {
+    if(i < num) {
+      array.push(1)
+    } else{
+      if ((i - num) === 0.5) {
+        array.push(0.5)
+      } else {
+        array.push(0)
+      }
+    }
+  }
+  return array
+}
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  convertToStarsArray: convertToStarsArray
 }

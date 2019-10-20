@@ -40,6 +40,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    doubanBase:"https://api.douban.com"
   }
 })
