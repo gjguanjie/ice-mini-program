@@ -109,5 +109,17 @@ Page({
       "movies": movies
     }
     this.setData(readData)
+  },
+  onMovieTap: function(event) {
+    var movieId = 
+    wx.navigateTo({
+      url: '',
+    })
+  },
+  onMoreTap: function(event) {
+    var category = event.currentTarget.dataset.category
+    wx.navigateTo({
+      url: '/pages/movie/more-movie/more-movie?category=' + category
+    })
   }
 })
