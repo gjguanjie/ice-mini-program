@@ -9,15 +9,18 @@ Page({
     var movieId = options.id;
     var url = app.globalData.doubanBase + 
       "/v2/movie/subject/" + movieId;
-    debugger
     util.http(url, this.processDoubanData)
+    wx.hideNavigationBarLoading()
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    wx.setNavigationBarTitle({
+      title: '格三',
+    })
+    wx.showNavigationBarLoading()
   },
 
   /**
