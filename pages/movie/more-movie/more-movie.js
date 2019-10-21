@@ -117,5 +117,11 @@ Page({
     })
     console.log(this.data.count)
     this.getDoubanData(this.data.url + tmpCount)
+  },
+  onMovieTap: function(event) {
+    var movieId = event.currentTarget.movieId
+    wx.navigateTo({
+      url: '../movie-detail/movie-detail?id=' + movieId,
+    })
   }
 })

@@ -9,7 +9,10 @@ Page({
   data: {
     inThreaters: {},
     comingSoon:{},
-    top250: {}
+    top250: {},
+    containerShow: true,
+    searchPanelShow:false,
+    searchResult:{}
   },
 
   /**
@@ -120,6 +123,31 @@ Page({
     var category = event.currentTarget.dataset.category
     wx.navigateTo({
       url: '/pages/movie/more-movie/more-movie?category=' + category
+    })
+  },
+  onBindFocus: function() {
+    this.setData({
+      containerShow: false,
+      searchPanelShow: true
+    })
+  },
+  onCancelImgTap: function() {
+    this.setData({
+      containerShow: true,
+      searchPanelShow: false,
+      searchResult: {},
+      inputValue:''
+    })
+  },
+  onBindConfirm: function(event) {
+    var keyword = event.detail.value
+    var searchUrl = app.globalData.doubanBase + "/v2/movie/top250?start=0&count=9&apikey=0df993c66c0c636e29ecbb5344252a4a"
+    this.getMovieListData(searchUrl,"searchResult",'')
+  },
+  onMovieTap: function (event) {
+    var movieId = event.currentTarget.dataset.movieId
+    wx.navigateTo({
+      url: 'movie-detail/movie-detail?id=' + movieId,
     })
   }
 })
